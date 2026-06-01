@@ -52,6 +52,11 @@ Singer can be easily extended to support data uploading to custom destinations.
 Please see [docs/DESIGN.md](docs/DESIGN.md) on Singer design.
 
 
+## Prerequisites
+
+- **JDK 11** or later (Temurin/Adoptium recommended)
+- **Maven 3.6+**
+
 ## Build
 
 #### Get Singer code
@@ -64,7 +69,7 @@ cd singer
 #### Build Singer binary
 
 ```bash
-mvn clean package -pl singer -am -DskipTests
+mvn clean package -pl singer -am -DskipTests -Dgpg.skip=true
 ```
 
 As there is no native support in JDK for file system events monitoring on Mac OSX, 
