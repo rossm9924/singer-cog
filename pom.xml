@@ -103,7 +103,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                     <configuration>
-                        <release>11</release>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                         <compilerArgs>
                             <arg>-Xlint:all</arg>
                         </compilerArgs>
@@ -122,7 +123,8 @@
                             <configuration>
                                 <rules>
                                     <requireJavaVersion>
-                                        <version>[11,)</version>
+                                        <version>[1.8,)</version>
+                                        <message>Java 8+ is required (will be raised to 11 once CI is upgraded)</message>
                                     </requireJavaVersion>
                                 </rules>
                             </configuration>
